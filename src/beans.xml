@@ -5,13 +5,13 @@
 <!--IOC-->
     <bean id="sim" class="com.company.ioc.Safaricon"></bean>
 <!--    Dependency Injection-->
-    <bean id="mairura" class="com.company.dependencyinjection.Student">
-        <property name="studentName" value="Mairura"/>
-        <property name="id" value="1"/>
+
+    <bean id="student" class="com.company.dependencyinjection.Student">
+        <constructor-arg name="studentName" value="Tiberius" />
+        <constructor-arg name="id" value="1" />
     </bean>
 
     <bean id="tiberius" class="com.company.dependencyinjection.Student">
-        <property name="studentName" value="Tiberius"/>
-        <property name="id" value="2"/>
+        <constructor-arg name="id" value="1" />
     </bean>
 </beans>
