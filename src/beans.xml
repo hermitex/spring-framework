@@ -2,6 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="sim" class="com.company.ioc.Safaricon"></bean>
+<!--IOC-->
+    <bean id="sim" class="com.company.ioc.Safaricon"></bean>
+<!--    Dependency Injection-->
+    <bean id="mairura" class="com.company.dependencyinjection.Student">
+        <property name="studentName" value="Mairura"/>
+        <property name="id" value="1"/>
+    </bean>
 
+    <bean id="tiberius" class="com.company.dependencyinjection.Student">
+        <property name="studentName" value="Tiberius"/>
+        <property name="id" value="2"/>
+    </bean>
 </beans>
