@@ -60,8 +60,14 @@
 
 
     <!--Autowiring byType-->
+<!--    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />-->
+
+<!--    <bean id="human" class="com.company.autowiring.Human" autowire="byType" />-->
+
+
+    <!--Autowiring constructor-->
     <bean id="heartObjectValue" class="com.company.autowiring.Heart" />
 
-    <bean id="human" class="com.company.autowiring.Human" autowire="byType" />
+    <bean id="human" class="com.company.autowiring.Human" autowire="constructor" />
 
 </beans>
