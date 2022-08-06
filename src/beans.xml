@@ -51,4 +51,11 @@
 <!--        <property name="cheat" ref="javaCheat" />-->
     </bean>
 
+
+
+    <!--Autowiring-->
+    <bean id="heart" class="com.company.autowiring.Heart" />
+
+    <bean id="human" class="com.company.autowiring.Human" autowire="byName" />
+
 </beans>
