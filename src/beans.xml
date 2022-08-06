@@ -53,9 +53,15 @@
 
 
 
-    <!--Autowiring-->
-    <bean id="heart" class="com.company.autowiring.Heart" />
+    <!--Autowiring byName-->
+<!--    <bean id="heart" class="com.company.autowiring.Heart" />-->
 
-    <bean id="human" class="com.company.autowiring.Human" autowire="byName" />
+<!--    <bean id="human" class="com.company.autowiring.Human" autowire="byName" />-->
+
+
+    <!--Autowiring byType-->
+    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />
+
+    <bean id="human" class="com.company.autowiring.Human" autowire="byType" />
 
 </beans>
