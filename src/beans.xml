@@ -16,13 +16,39 @@
 <!--    </bean>-->
 
     <!--    Dependency Injection Object type-->
-    <bean id="mathCheat" class="com.company.independencyinjectionobjecttype.MathCheat" />
-    <bean id="student" class="com.company.independencyinjectionobjecttype.Student">
-        <property name="id" value="1" />
-        <property name="mathCheat" ref="mathCheat" />
+<!--    <bean id="mathCheat" class="com.company.independencyinjectionobjecttype.MathCheat" />-->
+<!--    <bean id="student" class="com.company.independencyinjectionobjecttype.Student">-->
+<!--        <property name="id" value="1" />-->
+<!--        <property name="mathCheat" ref="mathCheat" />-->
+<!--    </bean>-->
+
+<!--    <bean id="anotherStudent" class="com.company.independencyinjectionobjecttype.Student">-->
+<!--        <property name="mathCheat" ref="mathCheat" />-->
+<!--    </bean>-->
+
+
+    <!--    Dependency Injection Object type - Loose Coupling -->
+    <bean id="mathCheat" class="com.company.loosecoupling.MathCheat" />
+
+    <bean id="scienceCheat" class="com.company.loosecoupling.ScienceCheat" />
+    <bean id="javaCheat" class="com.company.loosecoupling.JavaCheat" />
+
+    <bean id="student" class="com.company.loosecoupling.Student">
+<!--        <property name="cheat" ref="scienceCheat" />-->
+<!--        <property name="cheat" ref="mathCheat" />-->
+        <property name="cheat" ref="javaCheat" />
     </bean>
 
-    <bean id="anotherStudent" class="com.company.independencyinjectionobjecttype.Student">
-        <property name="mathCheat" ref="mathCheat" />
+
+<!--Assignment-->
+    <bean id="dataService" class="com.company.loosecouplingtest.DataService" />
+
+    <bean id="callService" class="com.company.loosecouplingtest.CallService" />
+
+    <bean id="airtel" class="com.company.loosecouplingtest.Airtel">
+                <property name="service" ref="callService" />
+        <!--        <property name="cheat" ref="mathCheat" />-->
+<!--        <property name="cheat" ref="javaCheat" />-->
     </bean>
+
 </beans>
