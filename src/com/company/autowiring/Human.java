@@ -8,11 +8,12 @@ public class Human {
     public Human() {
     }
 
-    @Autowired
+
     public Human(Heart heart) {
         this.heart = heart;
     }
 
+    @Autowired
     public void setHeart(Heart heart) {
         this.heart = heart;
     }
