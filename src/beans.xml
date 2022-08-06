@@ -1,73 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--IOC-->
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/context/spring-context.xsd"
+>
+    <!--IOC-->
     <bean id="sim" class="com.company.ioc.Safaricon"></bean>
-<!--    Dependency Injection Literaltype-->
+    <!--    Dependency Injection Literaltype-->
 
-<!--    <bean id="student" class="com.company.dependencyinjection.Student">-->
-<!--        <constructor-arg name="studentName" value="Tiberius" />-->
-<!--        <constructor-arg name="id" value="1" />-->
-<!--    </bean>-->
+    <!--    <bean id="student" class="com.company.dependencyinjection.Student">-->
+    <!--        <constructor-arg name="studentName" value="Tiberius" />-->
+    <!--        <constructor-arg name="id" value="1" />-->
+    <!--    </bean>-->
 
-<!--    <bean id="tiberius" class="com.company.dependencyinjection.Student">-->
-<!--        <constructor-arg name="id" value="1" />-->
-<!--    </bean>-->
+    <!--    <bean id="tiberius" class="com.company.dependencyinjection.Student">-->
+    <!--        <constructor-arg name="id" value="1" />-->
+    <!--    </bean>-->
 
     <!--    Dependency Injection Object type-->
-<!--    <bean id="mathCheat" class="com.company.independencyinjectionobjecttype.MathCheat" />-->
-<!--    <bean id="student" class="com.company.independencyinjectionobjecttype.Student">-->
-<!--        <property name="id" value="1" />-->
-<!--        <property name="mathCheat" ref="mathCheat" />-->
-<!--    </bean>-->
+    <!--    <bean id="mathCheat" class="com.company.independencyinjectionobjecttype.MathCheat" />-->
+    <!--    <bean id="student" class="com.company.independencyinjectionobjecttype.Student">-->
+    <!--        <property name="id" value="1" />-->
+    <!--        <property name="mathCheat" ref="mathCheat" />-->
+    <!--    </bean>-->
 
-<!--    <bean id="anotherStudent" class="com.company.independencyinjectionobjecttype.Student">-->
-<!--        <property name="mathCheat" ref="mathCheat" />-->
-<!--    </bean>-->
+    <!--    <bean id="anotherStudent" class="com.company.independencyinjectionobjecttype.Student">-->
+    <!--        <property name="mathCheat" ref="mathCheat" />-->
+    <!--    </bean>-->
 
 
     <!--    Dependency Injection Object type - Loose Coupling -->
-    <bean id="mathCheat" class="com.company.loosecoupling.MathCheat" />
+    <bean id="mathCheat" class="com.company.loosecoupling.MathCheat"/>
 
-    <bean id="scienceCheat" class="com.company.loosecoupling.ScienceCheat" />
-    <bean id="javaCheat" class="com.company.loosecoupling.JavaCheat" />
+    <bean id="scienceCheat" class="com.company.loosecoupling.ScienceCheat"/>
+    <bean id="javaCheat" class="com.company.loosecoupling.JavaCheat"/>
 
     <bean id="student" class="com.company.loosecoupling.Student">
-<!--        <property name="cheat" ref="scienceCheat" />-->
-<!--        <property name="cheat" ref="mathCheat" />-->
-        <property name="cheat" ref="javaCheat" />
+        <!--        <property name="cheat" ref="scienceCheat" />-->
+        <!--        <property name="cheat" ref="mathCheat" />-->
+        <property name="cheat" ref="javaCheat"/>
     </bean>
 
 
-<!--Assignment-->
-    <bean id="dataService" class="com.company.loosecouplingtest.DataService" />
+    <!--Assignment-->
+    <bean id="dataService" class="com.company.loosecouplingtest.DataService"/>
 
-    <bean id="callService" class="com.company.loosecouplingtest.CallService" />
+    <bean id="callService" class="com.company.loosecouplingtest.CallService"/>
 
     <bean id="airtel" class="com.company.loosecouplingtest.Airtel">
-                <property name="service" ref="callService" />
+        <property name="service" ref="callService"/>
         <!--        <property name="cheat" ref="mathCheat" />-->
-<!--        <property name="cheat" ref="javaCheat" />-->
+        <!--        <property name="cheat" ref="javaCheat" />-->
     </bean>
-
 
 
     <!--Autowiring byName-->
-<!--    <bean id="heart" class="com.company.autowiring.Heart" />-->
+    <!--    <bean id="heart" class="com.company.autowiring.Heart" />-->
 
-<!--    <bean id="human" class="com.company.autowiring.Human" autowire="byName" />-->
+    <!--    <bean id="human" class="com.company.autowiring.Human" autowire="byName" />-->
 
 
     <!--Autowiring byType-->
-<!--    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />-->
+    <!--    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />-->
 
-<!--    <bean id="human" class="com.company.autowiring.Human" autowire="byType" />-->
+    <!--    <bean id="human" class="com.company.autowiring.Human" autowire="byType" />-->
 
 
     <!--Autowiring constructor-->
-    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />
+    <!--    <bean id="heartObjectValue" class="com.company.autowiring.Heart" />-->
 
-    <bean id="human" class="com.company.autowiring.Human" autowire="constructor" />
+    <!--    <bean id="human" class="com.company.autowiring.Human" autowire="constructor" />-->
+
+
+    <!--Autowiring inside Java file-->
+
+    <context:annotation-config />
+
+    <bean id="heartObjectValue" class="com.company.autowiring.Heart"/>
+
+    <bean id="human" class="com.company.autowiring.Human"/>
 
 </beans>
