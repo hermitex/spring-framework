@@ -4,14 +4,25 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!--IOC-->
     <bean id="sim" class="com.company.ioc.Safaricon"></bean>
-<!--    Dependency Injection-->
+<!--    Dependency Injection Literaltype-->
 
-    <bean id="student" class="com.company.dependencyinjection.Student">
-        <constructor-arg name="studentName" value="Tiberius" />
-        <constructor-arg name="id" value="1" />
+<!--    <bean id="student" class="com.company.dependencyinjection.Student">-->
+<!--        <constructor-arg name="studentName" value="Tiberius" />-->
+<!--        <constructor-arg name="id" value="1" />-->
+<!--    </bean>-->
+
+<!--    <bean id="tiberius" class="com.company.dependencyinjection.Student">-->
+<!--        <constructor-arg name="id" value="1" />-->
+<!--    </bean>-->
+
+    <!--    Dependency Injection Object type-->
+    <bean id="mathCheat" class="com.company.independencyinjectionobjecttype.MathCheat" />
+    <bean id="student" class="com.company.independencyinjectionobjecttype.Student">
+        <property name="id" value="1" />
+        <property name="mathCheat" ref="mathCheat" />
     </bean>
 
-    <bean id="tiberius" class="com.company.dependencyinjection.Student">
-        <constructor-arg name="id" value="1" />
+    <bean id="anotherStudent" class="com.company.independencyinjectionobjecttype.Student">
+        <property name="mathCheat" ref="mathCheat" />
     </bean>
 </beans>
