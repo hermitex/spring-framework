@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/context/spring-context.xsd"
+       http://www.springframework.org/schema/context/spring-context.xsd"
 >
     <!--IOC-->
     <bean id="sim" class="com.company.ioc.Safaricon"></bean>
@@ -79,7 +79,14 @@
 
     <context:annotation-config />
 
-    <bean id="heartObjectValue" class="com.company.autowiring.Heart"/>
+    <bean id="humanHeart" class="com.company.autowiring.Heart">
+        <property name="nameOfAnimal" value="Human"/>
+        <property name="numOfHeart" value="1"/>
+    </bean>
+    <bean id="catObjectValue" class="com.company.autowiring.Heart">
+        <property name="nameOfAnimal" value="Cat"/>
+        <property name="numOfHeart" value="7"/>
+    </bean>
 
     <bean id="human" class="com.company.autowiring.Human"/>
 
